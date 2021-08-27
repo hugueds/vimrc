@@ -29,7 +29,7 @@ set undofile
 set undodir=$VIM/undo
 
 " highlight Normal ctermbg=DarkGrey
-packadd! dracula
+" packadd! dracula
 colorscheme dracula
 
 " search commands
@@ -38,15 +38,13 @@ set incsearch
 set ignorecase
 set hlsearch
 set shortmess-=
-highlight Normal ctermbg=None
 
+set highlight Normal ctermbg=None
 
 set listchars=tab:▸\ ,eol:¬
-            
-
 
 set colorcolumn=80
-highlight ColorColumn ctermbg=0
+set highlight ColorColumn ctermbg=0
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -150,6 +148,7 @@ nnoremap tk :tabnext<CR>
 nnoremap tj :tabprev<CR>
 nnoremap th :tabfirst<CR>
 nnoremap tl :tablast<CR>
+nnoremap tq :tabquit<CR>
 
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
