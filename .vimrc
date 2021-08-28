@@ -1,7 +1,7 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-syntax on
+" syntax on
 set encoding=utf-8
 set cursorline
 set wildmenu
@@ -30,7 +30,7 @@ set undodir=$VIM/undo
 
 " highlight Normal ctermbg=DarkGrey
 " packadd! dracula
-colorscheme dracula
+" colorscheme dracula
 
 " search commands
 set showmatch
@@ -39,49 +39,29 @@ set ignorecase
 set hlsearch
 set shortmess-=
 
-set highlight Normal ctermbg=None
+" set highlight Normal ctermbg=None
+" set highlight ColorColumn ctermbg=0
 
 set listchars=tab:▸\ ,eol:¬
 
 set colorcolumn=80
-set highlight ColorColumn ctermbg=0
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=$VIM/bundle/Vundle.vim
 set rtp+=/usr/local/opt/fzf
 
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'preservim/nerdtree'
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
-
-
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-" Git plugin not hosted on GitHub
-" Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-" Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-" Plugin 'ascenator/L9', {'name': 'newL9'}
 
-" All of your Plugins must be added before the following line
 call vundle#end()            " required
 
 filetype plugin indent on    " required
@@ -99,8 +79,8 @@ let g:airline#extensions#branch#enabled=1
 let g:airline#extensions#le#enabled=1
 
  
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 "filetype plugin on
 "
 " Brief help
@@ -112,8 +92,9 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-" Remaps
-"
+
+" Remaps keys
+
 " Leader Key
 let mapleader = ","
 nmap <leader>w :w!<cr>
@@ -191,3 +172,4 @@ cnoremap <C-K>		<C-U>
 
 cnoremap <C-P> <Up>
 cnoremap <C-N> <Down>
+
