@@ -2,12 +2,15 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 syntax on
+
 set encoding=utf-8
+set splitright splitbelow
+set mouse=a
+set noerrorbells
 set cursorline
 set wildmenu
 set showcmd
 set showmode
-set noerrorbells
 set tabstop=4 
 set softtabstop=4
 set shiftwidth=4
@@ -21,6 +24,9 @@ set ruler
 set laststatus=2
 set cmdheight=2
 set textwidth=70
+set scrolloff=8
+set hidden
+set guicursor=
 
 " files
 set nobackup
@@ -28,41 +34,45 @@ set noswapfile
 set undofile
 set undodir=$VIM/undo
 
+
 " highlight Normal ctermbg=DarkGrey
 " packadd! dracula
 " colorscheme dracula
+set termguicolors
 
 " search commands
 set showmatch
 set incsearch
 set ignorecase
 set hlsearch
-set shortmess-=
+set shortmess+=c
 
 " set highlight Normal ctermbg=None
-" set highlight ColorColumn ctermbg=0
+set highlight ColorColumn ctermbg=0 guibg=lightgrey
+" set signcolumn=yes
 
 set listchars=tab:▸\ ,eol:¬
 
 set colorcolumn=80
 
 " set the runtime path to include Vundle and initialize
-set rtp+=$VIM/bundle/Vundle.vim
 set rtp+=/usr/local/opt/fzf
 
-call vundle#begin()
+call plug#begin('$VIM/plugged')
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'preservim/nerdtree'
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 
-call vundle#end()            " required
+Plug 'VundleVim/Vundle.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'preservim/nerdtree'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
+
+call plug#end()
+
 
 filetype plugin indent on    " required
 
@@ -79,19 +89,6 @@ let g:airline#extensions#branch#enabled=1
 let g:airline#extensions#le#enabled=1
 
  
-"autocmd StdinReadPre * let s:std_in=1
-"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-
 
 " Remaps keys
 
@@ -108,6 +105,19 @@ nnoremap <leader>j <C-w> j
 nnoremap <leader>k <C-w> k 
 nnoremap <leader>l <C-w> l 
 
+nnoremap <leader>bd :bd<CR>
+nnoremap <leader>bl :bl<CR>
+nnoremap <leader>br :br<CR>
+
+nnoremap <leader>rp :resize 100<CR>
+nnoremap <leader>+ :vertical resize +5<CR>
+nnoremap <leader>- <:vertical resize -5CR>
+
+nnoremap <leader>h :split<Space>
+nnoremap <leader>vv :vsplit<Space>
+
+
+
 
 " Quick exit insert mode
 inoremap jk <ESC>
@@ -115,6 +125,8 @@ inoremap jj <ESC>
 nnoremap j gj
 nnoremap k gk
 nnoremap n nzz
+nnoremap gl $
+nnoremap gh 0
 
 nmap <CR> o<ESC>
 
