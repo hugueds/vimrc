@@ -58,7 +58,7 @@ set listchars=tab:▸\ ,eol:¬
 " Remaps keys
 
 " Leader Key
-let mapleader = ","
+let mapleader =" " 
 nmap <leader>w :w!<cr>
 nmap <leader><leader>q :q!<cr>
 nmap <leader><F5> :so $VIMRC<CR>
@@ -91,8 +91,8 @@ nnoremap gh 0
 nmap <CR> o<ESC>
 
 " remap search
-map <space> /
-map <C-space> ?
+#map <space> /
+#map <C-space> ?
 map <silent> <leader><cr> :noh<cr>
 
 " Tab manipulation
