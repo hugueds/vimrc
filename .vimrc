@@ -91,8 +91,8 @@ nnoremap gh 0
 nmap <CR> o<ESC>
 
 " remap search
-#map <space> /
-#map <C-space> ?
+" map <space> /
+" map <C-space> ?
 map <silent> <leader><cr> :noh<cr>
 
 " Tab manipulation
