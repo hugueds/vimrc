@@ -136,8 +136,8 @@ cnoremap <C-P> <Up>
 cnoremap <C-N> <Down>
 
 
-nmap <leader>t <leader><leader>t
-nmap <leader>s <leader><leader>s
+"nmap <leader>t <leader><leader>t
+"nmap <leader>s <leader><leader>s
 
 
 
